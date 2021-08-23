@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tagebuch</string>
+    <string name="submit">+</string>
+    <string name="pensamiento_title">Title</string>
+    <string name="pensamiento_description">Description</string>
+    <string name="pensamiento_date">Date</string>
+    <string name="title_mandatory">Título *</string>
+    <string name="description_mandatory">Descripción *</string>
+    <string name="reportar">Reportar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">eliminar</string>
+</resources>
