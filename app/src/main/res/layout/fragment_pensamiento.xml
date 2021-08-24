@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
     tools:context=".view.fragments.PensamientoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_color"
-        android:layout_width="400dp"
+        android:layout_width="380dp"
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
@@ -45,6 +47,17 @@
             app:layout_constraintTop_toBottomOf="@+id/title_pensmiento"
             tools:text="@string/pensamiento_description" />
 
+        <TextView
+            android:id="@+id/fecha_pensamiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pensamiento_date"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_pensamiento" />
+
         <Button
             android:id="@+id/button_editar"
             android:layout_width="wrap_content"
@@ -59,7 +72,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_eliminar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_pensamiento" />
+            app:layout_constraintTop_toBottomOf="@+id/fecha_pensamiento" />
 
         <Button
             android:id="@+id/button_eliminar"
@@ -72,7 +85,7 @@
             android:text="@string/eliminar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_pensamiento" />
+            app:layout_constraintTop_toBottomOf="@+id/fecha_pensamiento" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

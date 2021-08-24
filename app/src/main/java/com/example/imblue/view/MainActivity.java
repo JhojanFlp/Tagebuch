@@ -1,18 +1,21 @@
-package com.example.imblue;
+package com.example.imblue.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.imblue.R;
 import com.example.imblue.controller.MainActivityController;
 import com.example.imblue.model.pojo.Categoria;
 import com.example.imblue.model.pojo.Pensamiento;
@@ -113,28 +116,29 @@ public class MainActivity extends AppCompatActivity {
         tituloText.setText(pensamiento.getTitulo());
         descripcionText.setText(pensamiento.getDescripcion());
         categoriasSpinner.setVisibility(View.GONE);
-        reportarButton.setText("Editar");
+        reportarButton.setText(R.string.editar);
         setEdit(true);
         setIdEdit(id);
     }
 
     public void reporteSucceed() {
-        notification("Pensamiento reportado!!!");
+        notification("¡Pensamiento reportado!");
         tituloText.setText("");
         descripcionText.setText("");
         showPensamientos();
     }
 
     public void deleteSucceed() {
-        notification("Pensamiento eliminado!!!");
+        notification("¡Pensamiento eliminado!");
         showPensamientos();
     }
 
     public void editSucceed() {
-        notification("Pensamiento editado!!!");
+        notification("¡Pensamiento editado!");
         tituloText.setText("");
         descripcionText.setText("");
         categoriasSpinner.setVisibility(View.VISIBLE);
+        reportarButton.setText(R.string.reportar);
         setEdit(false);
         setIdEdit(null);
         showPensamientos();

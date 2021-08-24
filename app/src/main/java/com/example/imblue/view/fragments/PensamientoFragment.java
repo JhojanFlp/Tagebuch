@@ -12,9 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.imblue.MainActivity;
+import com.example.imblue.view.MainActivity;
 import com.example.imblue.R;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 public class PensamientoFragment extends Fragment {
@@ -26,6 +27,7 @@ public class PensamientoFragment extends Fragment {
     private View rootView;
     private TextView titleTextView;
     private TextView descriptionTextView;
+    private TextView fechaTextView;
     private ConstraintLayout colorLayout;
     private Button eliminarButton, editarButton;
 
@@ -56,12 +58,16 @@ public class PensamientoFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_pensamiento, container, false);
         titleTextView = rootView.findViewById(R.id.title_pensmiento);
         descriptionTextView = rootView.findViewById(R.id.description_pensamiento);
+        fechaTextView = rootView.findViewById(R.id.fecha_pensamiento);
         colorLayout = rootView.findViewById(R.id.layout_color);
         eliminarButton = rootView.findViewById(R.id.button_eliminar);
         editarButton = rootView.findViewById(R.id.button_editar);
 
+        String fechaFormat = DateFormat.getDateInstance().format(fecha);
+
         titleTextView.setText(titulo);
         descriptionTextView.setText(descripcion);
+        fechaTextView.setText(fechaFormat);
         colorLayout.setBackgroundColor(Color.parseColor("#" + color));
 
         // Events

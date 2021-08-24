@@ -1,7 +1,7 @@
 package com.example.imblue.controller;
 
 
-import com.example.imblue.MainActivity;
+import com.example.imblue.view.MainActivity;
 import com.example.imblue.model.LocalStorage;
 import com.example.imblue.model.dao.CategoriaRoomDAO;
 import com.example.imblue.model.dao.PensamientoRoomDAO;
@@ -24,8 +24,14 @@ public class MainActivityController {
             // Create categories
             String[] nombres = {"Creativo", "Analítico", "Crítico", "Estratégico", "Personal"};
             // TODO: Set descriptions
-            String[] descripciones = {"Creativo", "Analítico", "Crítico", "Estratégico", "Personal"};
-            String[] colores = {"d0d3d4", "d4ac0d", "138d75", "2471a3", "cb4335"};
+            String[] descripciones = {
+                    "Creación, idea o innovación",
+                    "Análisis de la situación",
+                    "Crítico ante el presente",
+                    "Estrategias para ganar y alcanzar el éxito",
+                    "Pensamiento temporal que necesito recordar"
+            };
+            String[] colores = {"9EF01A", "FFD300", "EF476F", "118AB2", "A5A58D"};
 
             for(int i = 0; i < 5; i++) {
                 categoria = new Categoria();
