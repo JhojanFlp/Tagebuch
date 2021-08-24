@@ -75,6 +75,10 @@ public class MainActivityController {
         return pensamiento;
     }
 
+    public Date GET_DATE() {
+        return new Date();
+    }
+
     public void reportar(MainActivity mainActivity, String titulo, String descripcion, String categoriaName) {
         if (titulo == null || titulo.compareTo("") == 0) {
             mainActivity.error("El título es obligatorio");
@@ -102,7 +106,7 @@ public class MainActivityController {
         pensamiento.setTitulo(titulo);
         pensamiento.setDescripcion(descripcion);
         pensamiento.setCategoriaId(categoria.getId());
-        pensamiento.setFecha(new Date());
+        pensamiento.setFecha(GET_DATE());
         this.pensamientoRoomDAO.insertPensamiento(pensamiento);
 
         mainActivity.reporteSucceed();
