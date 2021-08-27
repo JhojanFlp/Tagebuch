@@ -9,4 +9,6 @@
     <string name="reportar">Reportar</string>
     <string name="editar">Editar</string>
     <string name="eliminar">eliminar</string>
+    <string name="undo">Deshacer</string>
+    <string name="redo">Rehacer</string>
 </resources>

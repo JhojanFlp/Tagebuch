@@ -5,6 +5,10 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.example.imblue.model.LocalStorage;
+import com.example.imblue.model.dao.CategoriaRoomDAO;
+import com.example.imblue.model.dao.PensamientoRoomDAO;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -65,4 +69,6 @@ public class Pensamiento {
     public void setCategoriaId(String categoriaId) {
         this.categoriaId = categoriaId;
     }
+
+    public Date GET_DATE() { return new Date(); }
 }

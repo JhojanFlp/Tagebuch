@@ -6,6 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/undo"
+        app:backgroundTint="#FF9800"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/scrollView2"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_undo_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_redo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/redo"
+        app:backgroundTint="#FF9800"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_redo_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
     <FrameLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -84,6 +118,7 @@
     </FrameLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="393dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

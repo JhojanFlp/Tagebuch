@@ -20,13 +20,15 @@ import com.example.imblue.controller.MainActivityController;
 import com.example.imblue.model.pojo.Categoria;
 import com.example.imblue.model.pojo.Pensamiento;
 import com.example.imblue.view.fragments.PensamientoFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EditText tituloText, descripcionText;
-    private Button reportarButton, editarButton, eliminarButton;
+    private Button reportarButton;
+    private FloatingActionButton undoButton, redoButton;
     private MainActivityController mainActivityController;
     private Spinner categoriasSpinner;
     private boolean isEdit = false;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         tituloText = findViewById(R.id.input_title);
         descripcionText = findViewById(R.id.input_description);
         reportarButton = findViewById(R.id.button_reportar);
+        undoButton = findViewById(R.id.button_undo);
+        redoButton = findViewById(R.id.button_redo);
         categoriasSpinner = findViewById(R.id.spinner_categorias);
 
         mainActivityController = new MainActivityController();
@@ -50,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reportarPensamiento();
+            }
+        });
+        undoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deshacer();
+            }
+        });
+        redoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rehacer();
             }
         });
 
@@ -180,4 +196,15 @@ public class MainActivity extends AppCompatActivity {
     public void setIdEdit(String idEdit) {
         this.idEdit = idEdit;
     }
+
+    public void rehacer() {
+        mainActivityController.rehacer();
+        showPensamientos();
+    }
+
+    public void deshacer() {
+        mainActivityController.deshacer();
+        showPensamientos();
+    }
+
 }
